@@ -1,4 +1,4 @@
-import { get } from 'mongoose'
+
 import {FaEdit,FaCheckDouble,FaRegTrashAlt} from 'react-icons/fa'
 
 function Task({task,index,name,deleteTask,getSingleTask,setToComplete}) {
