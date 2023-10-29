@@ -2,11 +2,12 @@
 
 function TaskForm({createTask, 
   handleInputChange, name,isEditing,updateTask}) {
+    
     return (
       <form className="task-form" 
           onSubmit={isEditing ? updateTask:createTask}>
           <input type="text" 
-          placeholder="Please add a Task"
+          placeholder={isEditing ? "Please update the Task" : "Please add a Task"}
           name="name" value={name} 
           onChange={handleInputChange}
           />

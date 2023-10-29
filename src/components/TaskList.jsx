@@ -78,8 +78,13 @@ const updateTask=async (e)=>{
   e.preventDefault();
   if(name==="") toast.error("Input field cannot empty");  
   try{
-    await axios.put(`${URL}/api/tasks/${taskID}`,formData);
-    toast.success("Task updated successfully");
+    if(name===formData.name) {
+      toast.error("Task is same as previous one");
+    }
+    else{
+      await axios.put(`${URL}/api/tasks/${taskID}`,formData);
+      toast.success("Task updated successfully");
+    }
     setIsEditing(false);
     setFormData({name:"",completed:false});
     // setFormData({...formData,name :""});
